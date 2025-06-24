@@ -1,0 +1,15 @@
+[project]
+name = "extended-matchgate-simulation"
+version = "0.1.0"
+description = "Extended matchgate quantum circuit simulator"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ffsim>=0.0.56",
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+]
