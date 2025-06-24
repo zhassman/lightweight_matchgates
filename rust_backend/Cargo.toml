@@ -1,0 +1,22 @@
+[package]
+name = "emsim"
+version = "0.1.0"
+edition = "2018"
+description = "Rust extension for Extended Matchgate Simulation"
+license = "MIT OR Apache-2.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Pin to v0.17 to match pyo3-ffi exactly once
+pyo3            = { version = "0.17.3", features = ["extension-module"] }
+numpy           = "0.17.2"
+ndarray         = "0.15.6"
+ndarray-linalg  = { version = "0.14.0", features = ["openblas"] }
+num-complex     = "0.4.2"
+rand            = "0.8.5"
+
+[patch.crates-io]
+# pull exactly the rust-numpy tag that matches numpy = "0.17.2"
+numpy = { git = "https://github.com/PyO3/rust-numpy.git", tag = "v0.17.2" }
